@@ -56,6 +56,7 @@ namespace ColorDetectionUsingSlider
             Cv2.BitwiseAnd(imgInputCopy, imgInputCopy, result, mask);
             pictureBox1.Image = result.ToBitmap();
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            GC.Collect();
         }
 
 
@@ -105,6 +106,8 @@ namespace ColorDetectionUsingSlider
             tb_cHue.Text = finalHue.ToString();
             tb_cSaturation.Text = finalSaturation.ToString();
             tb_cValue.Text = finalValue.ToString();
+
+            GC.Collect();
         }
 
         private void tBar_Blue_Scroll(object sender, EventArgs e)
